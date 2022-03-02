@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".QrScanActivity">
 
+    <com.budiyev.android.codescanner.CodeScannerView
+        android:id="@+id/scanner_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:autoFocusButtonColor="@color/white"
+        app:autoFocusButtonVisible="true"
+        app:flashButtonColor="@color/white"
+        app:flashButtonVisible="true"
+        app:frameColor="@color/white"
+        app:maskColor="#602C2A2A"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
