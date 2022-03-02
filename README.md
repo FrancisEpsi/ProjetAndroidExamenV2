@@ -6,13 +6,13 @@
 ***
 * Splash = 
 * Création de compte = 
-* Scan QrCode = 
+* Scan QrCode = François
 * Formulaire d'insciption =
 * Home Page = Titouan
 * Offre = Titouan
-* Magasins = 
+* Magasins = François
 * Détails du compte = 
-* Détails du magasin =
+* Détails du magasin = François
 -----
 Du coup pour les pages à vous de choisir celle que vous voulez faire. Je vais aussi afficher les liens de l'API du prof comme ça tout y est.
 -----
