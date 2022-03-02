@@ -67,4 +67,18 @@ class QrScanActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        if (::codescanner.isInitialized) {
+            codescanner?.startPreview()
+        }
+    }
+
+    override fun onPause() {
+        if (::codescanner.isInitialized) {
+            codescanner?.releaseResources()
+        }
+        super.onPause()
+    }
 }
