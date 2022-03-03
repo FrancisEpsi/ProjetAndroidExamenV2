@@ -15,6 +15,11 @@
             android:name=".OffresActivity"
             android:exported="false" />
         <activity
+            android:name=".CreateAccountActivity"
+            android:exported="false"
+            android:label="@string/title_activity_create_account"
+            android:theme="@style/Theme.ProjetExamenV2.NoActionBar" />
+        <activity
             android:name=".QrScanActivity"
             android:exported="false" />
         <activity

@@ -14,9 +14,33 @@
         <!-- Customize your theme here. -->
     </style>
 
+<<<<<<< HEAD
 
     <!-- Thème pour le menu de navigation Bottom -->
     <style name="BottomNavigationStyle" parent="Widget.Design.BottomNavigationView">
         <item name="android:textSize">18sp</item>
     </style>
+=======
+    <style name="Theme.ProjetExamenV2.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="EditInput" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="EditButton" parent="Widget.AppCompat.Button" >
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="Theme.ProjetExamenV2.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ProjetExamenV2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+>>>>>>> 00b02a0e5f723d7483dcc8dac16b5afc6d2ee1aa
 </resources>
