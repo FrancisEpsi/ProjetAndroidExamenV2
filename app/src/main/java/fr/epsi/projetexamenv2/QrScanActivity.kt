@@ -13,6 +13,8 @@ import com.budiyev.android.codescanner.CodeScannerView
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import org.json.JSONObject
+import java.lang.Exception
 
 class QrScanActivity : AppCompatActivity() {
 
@@ -42,6 +44,7 @@ class QrScanActivity : AppCompatActivity() {
         codescanner.decodeCallback = DecodeCallback {
             runOnUiThread {
                 Toast.makeText(this, it.text, Toast.LENGTH_LONG).show()
+                decodeJson(it.text)
             }
         }
 
@@ -53,6 +56,26 @@ class QrScanActivity : AppCompatActivity() {
 
         scannerView.setOnClickListener {
             codescanner.startPreview()
+        }
+
+    }
+
+    private fun decodeJson(jsonStr: String){
+        try {
+            val jsObj = JSONObject(jsonStr)
+            val firstName = jsObj.optString("firstName","empty")
+            val lastName = jsObj.optString("lastName","empty")
+            val email = jsObj.optString("email", "empty")
+            val address = jsObj.optString("address","empty")
+            val zipcode = jsObj.optString("zipcode", "empty")
+            val city = jsObj.optString("city","empty")
+            val cardRef = jsObj.optString("cardRef","empty")
+
+            val scannedUser = User(firstName, lastName, email, address, zipcode, city, cardRef)
+
+            Toast.makeText(this, scannedUser.firstName, Toast.LENGTH_SHORT).show()
+        } catch (e : Exception) {
+            Toast.makeText(this, "Error while parsing JSON", Toast.LENGTH_SHORT).show()
         }
 
     }
