@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CreateAccountActivity">
+
+
+    <TextView
+        android:id="@+id/createAccount_Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Création de compte"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/input_lastName"
+                android:layout_marginTop="70dp"
+
+                android:hint="Nom"
+                style="@style/EditInput"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/input_firstName"
+                style="@style/EditInput"
+                android:hint="Prénom"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/input_email"
+                style="@style/EditInput"
+                android:ems="10"
+                android:hint="email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/input_adress"
+                style="@style/EditInput"
+                android:ems="10"
+                android:hint="adresse"
+                android:inputType="textPostalAddress" />
+
+            <EditText
+                android:id="@+id/input_postal"
+                style="@style/EditInput"
+                android:ems="10"
+                android:hint="code postale"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/input_city"
+                style="@style/EditInput"
+                android:ems="10"
+                android:hint="Ville"
+                android:inputType="textPostalAddress" />
+
+            <EditText
+                android:id="@+id/input_card"
+                style="@style/EditInput"
+                android:hint="Carte"
+                android:inputType="text"
+                android:textColorHint="Carte" />
+
+            <Button
+                android:id="@+id/button_createAccount"
+                style="@style/EditButton"
+                android:text="Créer" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
