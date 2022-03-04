@@ -14,10 +14,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 2e047dc8401ecdaea659ea4bb13b51f746b45076
     <!-- Thème pour le menu de navigation Bottom -->
     <style name="BottomNavigationStyle" parent="Widget.Design.BottomNavigationView">
         <item name="android:textSize">18sp</item>
