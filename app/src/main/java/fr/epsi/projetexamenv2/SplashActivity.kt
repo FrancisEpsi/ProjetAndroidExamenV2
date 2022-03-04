@@ -2,7 +2,6 @@ package fr.epsi.projetexamenv2
 
 import android.content.Intent
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -13,11 +12,6 @@ class SplashActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        val btnQr : Button = findViewById(R.id.button1)
-        btnQr.setOnClickListener {
-            val newIntent = Intent(application, QrScanActivity::class.java)
-            startActivity(newIntent)
-        }
 
         val HasAccount : String = readSharedPreferences("HasAccount")
 

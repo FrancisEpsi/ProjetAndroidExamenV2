@@ -31,8 +31,6 @@ class OffresAdapteur (
         val product = offres.get(position)
         holder.textViewTitle.text = product.name
         holder.textViewDesc.text = product.desc
-
-        // Remplir pour l'image avec Picasso
     }
 
     override fun getItemCount(): Int {

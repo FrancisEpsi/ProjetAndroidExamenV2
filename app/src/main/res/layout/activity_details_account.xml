@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailsAccountActivity">
+
+    <include
+        layout="@layout/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/inputLastName"
+                style="@style/EditInput"
+                android:inputType="text"
+                android:hint="Nom" />
+
+            <EditText
+                android:id="@+id/inputFirstName"
+                style="@style/EditInput"
+                android:inputType="text"
+                android:hint="Prénom" />
+
+            <EditText
+                android:id="@+id/inputEmail"
+                style="@style/EditInput"
+                android:inputType="text"
+                android:hint="Email" />
+
+            <EditText
+                android:id="@+id/inputAdresse"
+                style="@style/EditInput"
+                android:inputType="text"
+                android:hint="Adresse" />
+
+            <EditText
+                android:id="@+id/inputCodePostal"
+                style="@style/EditInput"
+                android:inputType="text"
+                android:hint="Code Postal" />
+
+            <EditText
+                android:id="@+id/inputCity"
+                style="@style/EditInput"
+                android:inputType="text"
+                android:hint="Ville" />
+
+            <Button
+                android:id="@+id/buttonUpdateAccount"
+                style="@style/EditButton"
+                android:text="@string/button_update_account" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
