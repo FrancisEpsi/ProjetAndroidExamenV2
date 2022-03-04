@@ -43,7 +43,6 @@ class QrScanActivity : AppCompatActivity() {
 
         codescanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                Toast.makeText(this, it.text, Toast.LENGTH_LONG).show()
                 decodeJson(it.text)
             }
         }
