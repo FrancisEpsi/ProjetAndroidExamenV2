@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 open class BaseActivity: AppCompatActivity() {
 
-    public var userAccount : User = User("empty","empty","empty","empty","empty","empty","empty")
-
 
     fun showButtonBack() {
         val imageButtonBack = findViewById<ImageView>(R.id.imageViewBack)
