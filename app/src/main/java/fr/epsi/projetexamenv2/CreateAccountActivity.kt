@@ -6,6 +6,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.google.android.material.snackbar.Snackbar
+<<<<<<< HEAD
+=======
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+>>>>>>> 7b25f417d7c4d9fd94dbb2ac4b71ebc0f57f7013
 
 class CreateAccountActivity : BaseActivity() {
 
@@ -50,7 +55,11 @@ class CreateAccountActivity : BaseActivity() {
     }
 
     private fun writeSharedPreferences(key : String , value : String){
+<<<<<<< HEAD
         val sharedPreferences= getSharedPreferences("account",Context.MODE_PRIVATE)
+=======
+        val sharedPreferences= getSharedPreferences("account", Context.MODE_PRIVATE)
+>>>>>>> 7b25f417d7c4d9fd94dbb2ac4b71ebc0f57f7013
         val edit=sharedPreferences.edit()
         edit.putString(key,value)
         edit.apply()

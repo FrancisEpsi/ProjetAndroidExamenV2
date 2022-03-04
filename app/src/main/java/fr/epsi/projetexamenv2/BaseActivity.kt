@@ -20,4 +20,8 @@ open class BaseActivity: AppCompatActivity() {
         val textStrinHeader = findViewById<TextView>(R.id.textViewHeader)
         textStrinHeader.text = txt
     }
+
+    private fun showUserCard() {
+
+    }
 }
