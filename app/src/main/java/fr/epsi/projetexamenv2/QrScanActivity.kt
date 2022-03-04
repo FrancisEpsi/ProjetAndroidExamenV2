@@ -1,6 +1,7 @@
 package fr.epsi.projetexamenv2
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +16,7 @@ import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
 import org.json.JSONObject
 import java.lang.Exception
+import android.content.Context
 
 class QrScanActivity : AppCompatActivity() {
 
@@ -70,9 +72,19 @@ class QrScanActivity : AppCompatActivity() {
             val city = jsObj.optString("city","empty")
             val cardRef = jsObj.optString("cardRef","empty")
 
-            val scannedUser = User(firstName, lastName, email, address, zipcode, city, cardRef)
+            val newIntent = Intent(application, CreateAccountActivity::class.java)
+            newIntent.putExtra("QRDATA","TRUE")
+            newIntent.putExtra("firstname", firstName)
+            newIntent.putExtra("lastname", lastName)
+            newIntent.putExtra("email", email)
+            newIntent.putExtra("address", address)
+            newIntent.putExtra("zipcode", zipcode)
+            newIntent.putExtra("city", city)
+            newIntent.putExtra("cardref", cardRef)
 
-            Toast.makeText(this, scannedUser.firstName, Toast.LENGTH_SHORT).show()
+            startActivity(newIntent)
+
+
         } catch (e : Exception) {
             Toast.makeText(this, "Error while parsing JSON", Toast.LENGTH_SHORT).show()
         }

@@ -24,6 +24,16 @@ class CreateAccountActivity : BaseActivity() {
         val tbCity : EditText = findViewById(R.id.input_city)
         val tbCardRef : EditText = findViewById(R.id.input_card)
 
+        if (intent.getStringExtra("QRDATA") == "TRUE") {
+            tbLastName.setText(intent.getStringExtra("lastname"))
+            tbFirstName.setText(intent.getStringExtra("firstname"))
+            tbEmail.setText(intent.getStringExtra("email"))
+            tbAddress.setText(intent.getStringExtra("address"))
+            tbZipcode.setText(intent.getStringExtra("zipcode"))
+            tbCity.setText(intent.getStringExtra("city"))
+            tbCardRef.setText(intent.getStringExtra("cardref"))
+        }
+
         btnCreate.setOnClickListener {
             writeSharedPreferences("HasAccount","YES")
             writeSharedPreferences("LastName",tbLastName.text.toString())
