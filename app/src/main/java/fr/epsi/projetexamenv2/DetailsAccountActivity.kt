@@ -12,6 +12,8 @@ class DetailsAccountActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_account)
         showButtonBack()
+        setStringHeader("Compte")
+        invisinleImg()
 
         val editView_name = findViewById<EditText>(R.id.inputLastName)
         val editView_prenom = findViewById<EditText>(R.id.inputFirstName)

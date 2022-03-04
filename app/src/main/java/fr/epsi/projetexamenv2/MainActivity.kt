@@ -12,6 +12,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        showPictureAccount()
+
         val navButtonCard : TextView = findViewById(R.id.navButton_Card)
         val navButtonOffers : TextView = findViewById(R.id.navButton_Offers)
         val navButtonShop : TextView = findViewById(R.id.navButton_Shop)
