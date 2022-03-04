@@ -5,6 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import fr.epsi.projetexamenv2.adapter.OffresAdapteur
+import okhttp3.*
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.IOException
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +43,61 @@ class OffersFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_offers, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val offres = arrayListOf<Offres>()
+        val reclyclerView = view.findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.reclyclerViewOffres)
+        activity?.let {
+            reclyclerView.layoutManager = LinearLayoutManager(it)
+        }
+        lateinit var offresAdapter : fr.epsi.projetexamenv2.adapter.OffresAdapteur
+        activity?.let {
+            val baseActivity = BaseActivity()
+
+            offresAdapter = fr.epsi.projetexamenv2.adapter.OffresAdapteur(baseActivity, offres)
+        }
+
+        reclyclerView.adapter = offresAdapter
+
+        val okHttpClient: okhttp3.OkHttpClient = OkHttpClient.Builder().build()
+        val mRequestURL = "https://djemam.com/epsi/offers.json"
+        val request = Request.Builder()
+            .url(mRequestURL)
+            .get()
+            .cacheControl(CacheControl.FORCE_CACHE)
+            .build()
+        okHttpClient.newCall(request).enqueue(object : okhttp3.Callback {
+            override fun onFailure(call: okhttp3.Call, e: java.io.IOException) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
+                val data = response.body?.string()
+                if(data != null) {
+                    val jsOb = JSONObject(data)
+                    val jsAr = jsOb.getJSONArray("item")
+                    for (i in 0 until jsAr.length()) {
+                        val jsOffres = jsAr.getJSONObject(i)
+                        val name = jsOffres.optString("name", "")
+                        val desc = jsOffres.optString("desc", "")
+                        val img = jsOffres.optString("img", "")
+                        val offre = Offres(name = name, desc = desc, img = img)
+                        offres.add(offre)
+                        Log.d("Offres", offre.name)
+                    }
+
+                    activity?.runOnUiThread {
+                        offresAdapter.notifyDataSetChanged()
+                    }
+
+                    Log.d("WS", data)
+                    Log.d("Offres", "${offres.size}")
+                }
+            }
+        })
     }
 
     companion object {

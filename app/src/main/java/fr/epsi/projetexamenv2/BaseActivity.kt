@@ -22,6 +22,7 @@ open class BaseActivity: AppCompatActivity() {
         textStrinHeader.text = txt
     }
 
+<<<<<<< HEAD
     fun showPictureAccount() {
         val imageAccount = findViewById<ImageView>(R.id.imageViewAccount)
         imageAccount.setOnClickListener(View.OnClickListener {
@@ -33,6 +34,10 @@ open class BaseActivity: AppCompatActivity() {
     fun invisinleImg() {
         val imageAccount = findViewById<ImageView>(R.id.imageViewAccount)
         imageAccount.visibility = View.GONE
+=======
+    fun showProfilePicture() {
+
+>>>>>>> 4374a939ba2d4040e35a602964f6496b672e072e
     }
 
     private fun showUserCard() {
