@@ -71,9 +71,14 @@
             <EditText
                 android:id="@+id/input_card"
                 style="@style/EditInput"
+<<<<<<< HEAD
                 android:hint="Carte"
                 android:inputType="text"
                 android:textColorHint="@color/black" />
+=======
+                android:hint="Numero de carte client"
+                android:inputType="text" />
+>>>>>>> 2e047dc8401ecdaea659ea4bb13b51f746b45076
 
             <Button
                 android:id="@+id/button_createAccount"

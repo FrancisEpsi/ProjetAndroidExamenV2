@@ -6,7 +6,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 open class BaseActivity: AppCompatActivity() {
-    fun showButtonBacjk() {
+
+
+    fun showButtonBack() {
         val imageButtonBack = findViewById<ImageView>(R.id.imageViewBack)
         imageButtonBack.visibility = View.VISIBLE
         imageButtonBack.setOnClickListener(View.OnClickListener {
