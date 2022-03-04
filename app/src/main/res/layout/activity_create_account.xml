@@ -73,7 +73,7 @@
                 style="@style/EditInput"
                 android:hint="Carte"
                 android:inputType="text"
-                android:textColorHint="Carte" />
+                android:textColorHint="@color/black" />
 
             <Button
                 android:id="@+id/button_createAccount"

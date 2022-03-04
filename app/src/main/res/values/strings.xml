@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">ProjetExamenV2</string>
-<<<<<<< HEAD
     <string name="carte">Carte</string>
     <string name="offres">Offres</string>
     <string name="magasins">Magasins</string>
-=======
     <string name="title_activity_create_account">CreateAccountActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -13,6 +11,5 @@
     <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
->>>>>>> 00b02a0e5f723d7483dcc8dac16b5afc6d2ee1aa
+    <string name="hello_second_fragment">Hello second fragment. Arg:</string>
 </resources>

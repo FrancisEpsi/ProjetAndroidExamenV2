@@ -1,6 +1,10 @@
 package fr.epsi.projetexamenv2
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -16,25 +20,48 @@ class CreateAccountActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_create_account)
 
-        binding = ActivityCreateAccountBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val btnCreate : Button = findViewById(R.id.button_createAccount)
 
-        setSupportActionBar(binding.toolbar)
+        val tbLastName : EditText = findViewById(R.id.input_lastName)
+        val tbFirstName : EditText = findViewById(R.id.input_firstName)
+        val tbEmail : EditText = findViewById(R.id.input_email)
+        val tbAddress : EditText = findViewById(R.id.input_adress)
+        val tbZipcode : EditText = findViewById(R.id.input_postal)
+        val tbCity : EditText = findViewById(R.id.input_city)
+        val tbCardRef : EditText = findViewById(R.id.input_card)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_create_account)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        if (intent.getStringExtra("QRDATA") == "TRUE") {
+            tbLastName.setText(intent.getStringExtra("lastname"))
+            tbFirstName.setText(intent.getStringExtra("firstname"))
+            tbEmail.setText(intent.getStringExtra("email"))
+            tbAddress.setText(intent.getStringExtra("address"))
+            tbZipcode.setText(intent.getStringExtra("zipcode"))
+            tbCity.setText(intent.getStringExtra("city"))
+            tbCardRef.setText(intent.getStringExtra("cardref"))
+        }
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        btnCreate.setOnClickListener {
+            writeSharedPreferences("HasAccount","YES")
+            writeSharedPreferences("LastName",tbLastName.text.toString())
+            writeSharedPreferences("FirstName",tbFirstName.text.toString())
+            writeSharedPreferences("Email", tbEmail.text.toString())
+            writeSharedPreferences("Address", tbAddress.text.toString())
+            writeSharedPreferences("ZipCode", tbZipcode.text.toString())
+            writeSharedPreferences("City", tbCity.text.toString())
+            writeSharedPreferences("CardRef", tbCardRef.text.toString())
+
+            val newIntent = Intent(application, MainActivity::class.java)
+            startActivity(newIntent)
+            finish()
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_create_account)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+    private fun writeSharedPreferences(key : String , value : String){
+        val sharedPreferences= getSharedPreferences("account", Context.MODE_PRIVATE)
+        val edit=sharedPreferences.edit()
+        edit.putString(key,value)
+        edit.apply()
     }
 }

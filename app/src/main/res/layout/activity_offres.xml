@@ -19,7 +19,7 @@
       android:layout_weight="1"/>
 
   <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/reclyclerViewProducts"
+      android:id="@+id/reclyclerViewOffres"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center" />

@@ -6,12 +6,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import fr.epsi.projetexamenv2.Products
+import fr.epsi.projetexamenv2.BaseActivity
+import fr.epsi.projetexamenv2.Offres
 import fr.epsi.projetexamenv2.R
 
-class ProductsAdapteur (
-    private val products :  ArrayList<Products>
-    ) : RecyclerView.Adapter<ProductsAdapteur.ViewHolder>() {
+class OffresAdapteur (
+    val context : BaseActivity,
+    private val offres :  ArrayList<Offres>
+    ) : RecyclerView.Adapter<OffresAdapteur.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textViewTitle = view.findViewById<TextView>(R.id.textViewName)
@@ -21,12 +23,12 @@ class ProductsAdapteur (
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.self_product, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.self_offre, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val product = products.get(position)
+        val product = offres.get(position)
         holder.textViewTitle.text = product.name
         holder.textViewDesc.text = product.desc
 
@@ -34,6 +36,6 @@ class ProductsAdapteur (
     }
 
     override fun getItemCount(): Int {
-        return products.size
+        return offres.size
     }
 }
