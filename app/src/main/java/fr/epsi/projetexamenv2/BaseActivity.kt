@@ -21,6 +21,10 @@ open class BaseActivity: AppCompatActivity() {
         textStrinHeader.text = txt
     }
 
+    fun showProfilePicture() {
+
+    }
+
     private fun showUserCard() {
 
     }
