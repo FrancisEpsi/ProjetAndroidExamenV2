@@ -49,7 +49,7 @@ class CreateAccountActivity : BaseActivity() {
     }
 
     private fun writeSharedPreferences(key : String , value : String){
-        val sharedPreferences= getSharedPreferences("account",Context.MODE_PRIVATE)
+        val sharedPreferences= getSharedPreferences("account", Context.MODE_PRIVATE)
         val edit=sharedPreferences.edit()
         edit.putString(key,value)
         edit.apply()
