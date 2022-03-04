@@ -12,5 +12,5 @@
         android:layout_height="61dp"
         android:text="Test QR"
         tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="149dp" />
+        tools:layout_editor_absoluteY="150dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
